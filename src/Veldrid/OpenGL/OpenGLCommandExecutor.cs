@@ -1072,7 +1072,7 @@ namespace Veldrid.OpenGL
 
         public void SetScissorRect(uint index, uint x, uint y, uint width, uint height)
         {
-            if (_backend == GraphicsBackend.OpenGL)
+            if (_backend == GraphicsBackend.OpenGL && (_gd.ApiVersion.Major >= 4 && _gd.ApiVersion.Minor >= 1))
             {
                 glScissorIndexed(
                     index,
@@ -1112,7 +1112,7 @@ namespace Veldrid.OpenGL
         {
             _viewports[(int)index] = viewport;
 
-            if (_backend == GraphicsBackend.OpenGL)
+            if (_backend == GraphicsBackend.OpenGL && (_gd.ApiVersion.Major >= 4 && _gd.ApiVersion.Minor >= 1))
             {
                 float left = viewport.X;
                 float bottom = _fb.Height - (viewport.Y + viewport.Height);
