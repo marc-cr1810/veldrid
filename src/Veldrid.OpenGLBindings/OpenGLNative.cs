@@ -1892,7 +1892,13 @@ namespace Veldrid.OpenGLBinding
             LoadFunction("glViewport", out p_glViewport);
             LoadFunction("glDepthRangef", out p_glDepthRangef);
             LoadFunction("glScissor", out p_glScissor);
-             
+
+            LoadFunction("glRenderbufferStorage", out p_glRenderbufferStorage);
+            LoadFunction("glFramebufferRenderbuffer", out p_glFramebufferRenderbuffer);
+            LoadFunction("glGetRenderbufferParameteriv", out p_glGetRenderbufferParameteriv);
+            LoadFunction("glGenRenderbuffers", out p_glGenRenderbuffers);
+            LoadFunction("glBindRenderbuffer", out p_glBindRenderbuffer);
+
             if (!gles)
             {
                 LoadFunction("glFramebufferTexture1D", out p_glFramebufferTexture1D);
@@ -1926,11 +1932,11 @@ namespace Veldrid.OpenGLBinding
                     LoadFunction("glTextureViewOES", out p_glTextureView);
                 }
 
-                LoadFunction("glRenderbufferStorage", out p_glRenderbufferStorage);
-                LoadFunction("glFramebufferRenderbuffer", out p_glFramebufferRenderbuffer);
-                LoadFunction("glGetRenderbufferParameteriv", out p_glGetRenderbufferParameteriv);
-                LoadFunction("glGenRenderbuffers", out p_glGenRenderbuffers);
-                LoadFunction("glBindRenderbuffer", out p_glBindRenderbuffer);
+                //LoadFunction("glRenderbufferStorage", out p_glRenderbufferStorage);
+                //LoadFunction("glFramebufferRenderbuffer", out p_glFramebufferRenderbuffer);
+                //LoadFunction("glGetRenderbufferParameteriv", out p_glGetRenderbufferParameteriv);
+                //LoadFunction("glGenRenderbuffers", out p_glGenRenderbuffers);
+                //LoadFunction("glBindRenderbuffer", out p_glBindRenderbuffer);
                 LoadFunction("glInsertEventMarker", out p_glInsertEventMarker);
                 LoadFunction("glPushGroupMarker", out p_glPushGroupMarker);
                 LoadFunction("glPopGroupMarker", out p_glPopGroupMarker);
